@@ -11,6 +11,12 @@ const todoItems = [
 // strongly-type the hard-coded values with an "enum"
 // for the object field/attribute named "status"
 
+enum StatusValues {
+  Todo = "todo",
+  InProgress = "in-progress",
+  Done = "done"
+}
+
 // apply types to the parameters and return values of the functions.
 
 function addTodoItem(todo) {
@@ -37,3 +43,4 @@ function getNextId(items) {
 const newTodo = addTodoItem("Buy lots of stuff with all the money we make from the app")
 
 console.log(JSON.stringify(newTodo))
+
