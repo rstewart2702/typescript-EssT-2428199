@@ -1,5 +1,13 @@
 // Types exercise:
 
+interface todoItem {
+  id : number,
+  title : string,
+  status : StatusValue,
+  completedOn? : Date   // N.B. notice this one's optional.
+}
+  
+
 // Create an interface to describe the structure of the
 // individual todoItems.
 const todoItems = [
@@ -11,7 +19,8 @@ const todoItems = [
 // strongly-type the hard-coded values with an "enum"
 // for the object field/attribute named "status"
 
-enum StatusValues {
+// The name here is singular now instead of plural:
+enum StatusValue {
   Todo = "todo",
   InProgress = "in-progress",
   Done = "done"
