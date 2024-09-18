@@ -46,6 +46,18 @@ function addTodoItem(todo: string) : todoItem {
 // Use a generic type (i.e., a type parameter) for the argument type
 // of the genNextId function:
 
+// Here is how the instructor defined the generic type parameter a little
+// differently than I:
+//   function getNextId<T extends { id : number }>(items:T[]) : number {
+// This means, roughly, that anything of type T should be an object which
+// at least can respond to the message "id" and this is how a Smalltalk
+// programmer might have thought about the issue.
+//
+// What's more, the object answered back from the "id" message should
+// respond to the message ">".
+// So, the instructor's type-signature is probably better!
+//
+// Here is how I defined the types on the getNextId function:
 function getNextId<T extends todoItem>(items: T[]) : number {
     return items.reduce((max, x) => x.id > max ? x.id : max, 0) + 1
 }
