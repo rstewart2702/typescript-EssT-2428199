@@ -18,7 +18,14 @@ let primaryContact: Contact = {
 type ContactFields = keyof Contact
 const field : ContactFields = "status"
 
-function getValue <T, U extends keyof T>(source:T, propertyName: U){
+// Really, once things get to be complicated enough,
+// what is wrong with putting things onto separate lines
+// in order to help visually separate things which are
+// conceptually separate?
+function getValue
+   <T, U extends keyof T>
+   (source:T, propertyName: U)
+{
     return source[propertyName]
 }
 
