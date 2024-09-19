@@ -1,5 +1,9 @@
+/* Modified from default provided by instructor:
+   we ask for the TypeScript compiler to provide
+   a file of type definitions concluded/derived. */
 {
     "compilerOptions": {
+	"declaration" : true,
         "target": "esnext",
     }
 }
