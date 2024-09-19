@@ -26,7 +26,11 @@ interface Query {
     matches(val): boolean;
 }
 
-function searchContacts(contacts: Contact[], query: Record<keyof Contact, Query>) {
+function searchContacts
+  (contacts: Contact[],
+   query: Record<keyof Contact, Query>
+   )
+{
     return contacts.filter(contact => {
         for (const property of Object.keys(contact) as (keyof Contact)[]) {
             // get the query object for this property
