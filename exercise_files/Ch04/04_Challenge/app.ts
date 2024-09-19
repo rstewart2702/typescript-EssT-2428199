@@ -1,6 +1,6 @@
 function query<T>(
     items: T[],
-    query: any // <--- replace this!
+    query: Query<T> // <--- replace this!
 ) {
     return items.filter(item => {
         // iterate through each of the item's properties
@@ -25,17 +25,11 @@ interface Item {
   age : number;
 }
 
-interface Query<ItmType> {
-  fieldName : keyof ItmType;
-  predicate : (v : ItmType) => boolean
-}
 
-interface Query2<ItmType> {
+interface Query<ItmType> {
   (fieldName: keyof ItmType)  : (v : ItmType) => boolean
 }
 
-let queries : Query<Item>[] = [];
-  
 
 const matches = query(
     [
