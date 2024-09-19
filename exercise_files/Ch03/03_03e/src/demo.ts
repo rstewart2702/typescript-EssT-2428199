@@ -16,6 +16,11 @@ interface Contact {
     status?: ContactStatus;
 }
 
+// Instructor added in the parameter type specification.
+// He depended a great deal upon the "intellisense" feature
+// of his editor to illustrate how the compiler uses the
+// type information to provide prompts which elaborate/explain
+// the options available.
 function toContact(nameOrContact: string | Contact): Contact {
     if (typeof nameOrContact === "object") {
         return {
