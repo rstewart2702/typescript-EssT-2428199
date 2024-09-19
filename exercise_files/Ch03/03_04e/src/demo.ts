@@ -13,6 +13,9 @@ interface Contact {
     address: Address;
 }
 
+// This kind of type spec allows us to specify that
+// an Awesome is of the type of the postalCode field
+// of the address field of an instance of Contact...
 type Awesome = Contact["address"]["postalCode"]
 
 interface ContactEvent {
