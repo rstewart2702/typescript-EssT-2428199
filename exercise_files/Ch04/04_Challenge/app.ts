@@ -20,6 +20,23 @@ function query<T>(
     })
 }
 
+interface Item {
+  name : string;
+  age : number;
+}
+
+interface Query<ItmType> {
+  fieldName : keyof ItmType;
+  predicate : (v : ItmType) => boolean
+}
+
+interface Query2<ItmType> {
+  (fieldName: keyof ItmType)  : (v : ItmType) => boolean
+}
+
+let queries : Query<Item>[] = [];
+  
+
 const matches = query(
     [
         { name: "Ted", age: 12 },
