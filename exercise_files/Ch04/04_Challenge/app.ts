@@ -1,7 +1,8 @@
 function query<T extends object>(
     items: T[],
     // query: QType<T> // <--- replace this!
-    query : QType<T>
+    //1 query : QType<T>
+    query : QType1<T>
 ) {
     return items.filter(item => {
         // iterate through each of the item's properties
@@ -151,3 +152,20 @@ const matches = query<Item>(
     })
 
 console.log(matches)
+
+let matches1 = query<Item>(
+    [
+        { name: "Ted", age: 12 },
+        { name: "Angie", age: 31 }
+    ],
+    v2
+    )
+console.log(matches1)
+
+let matches2 = query<Item> (
+    [
+        { name: "Ted", age: 12 },
+        { name: "Angie", age: 31 }
+    ],
+    v1)
+console.log(matches2)
