@@ -4,6 +4,7 @@
 {
     "compilerOptions": {
 	"declaration" : true,
+	"strict" : true,
         "target": "esnext",
     }
 }
